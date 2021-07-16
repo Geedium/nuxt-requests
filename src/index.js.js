@@ -6,7 +6,7 @@ function create(_options = []) {
         let block = false;
         
         if(options.whitelist && Array.isArray(options.whitelist)) {
-            whitelist.forEach(attacker => {
+            options.whitelist.forEach(attacker => {
                 if(ip == attacker) {
                     block = true;
                 }

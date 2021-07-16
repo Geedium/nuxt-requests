@@ -2,12 +2,8 @@
   "name": "@geedium/requests",
   "version": "1.0.0",
   "description": "Requests middleware for Nuxt.js and Express.js",
-  "module": "./src/index.esm.js",
-  "exports": {
-    ".": {
-      "import": "./src/index.esm.js"
-    }
-  },
+  "main": "./src/index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

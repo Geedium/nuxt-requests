@@ -1,6 +1,6 @@
 {
   "name": "@geedium/requests",
-  "version": "1.0.4",
+  "version": "1.0.4-ts",
   "description": "Requests middleware for Nuxt.js and Express.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.js",

@@ -1,7 +1,19 @@
-function create(_options = []) {
-    const options = { ..._options}
+import { ServerMiddleware } from '@nuxt/types'
+import { ServerResponse } from 'http';
 
-    function middleware(req, res, next) {
+interface Options {
+    whitelist: Array<string>,
+    log?: Boolean
+}
+
+function create(_options: any = []) {
+    const options: Options = {
+        ..._options,
+        whitelist: [],
+        log: undefined
+    }
+
+    function middleware(req: any, res: ServerResponse, next: any): ServerMiddleware|void {
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
         let block = false;
         

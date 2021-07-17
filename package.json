@@ -1,11 +1,22 @@
 {
   "name": "@geedium/requests",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Requests middleware for Nuxt.js and Express.js",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.js",
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rimraf dist && mkdirp dist && rollup -c"
   },
   "repository": {
     "type": "git",
@@ -16,5 +27,15 @@
   "bugs": {
     "url": "https://github.com/Geedium/requests/issues"
   },
-  "homepage": "https://github.com/Geedium/requests#readme"
+  "homepage": "https://github.com/Geedium/requests#readme",
+  "devDependencies": {
+    "@nuxt/types": "^2.15.7",
+    "@types/node": "^16.3.2",
+    "mkdirp": "^1.0.4",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.53.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.3.5"
+  }
 }

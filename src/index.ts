@@ -6,13 +6,7 @@ interface Options {
     log?: Boolean
 }
 
-function create(_options: any = []) {
-    const options: Options = {
-        ..._options,
-        whitelist: [],
-        log: undefined
-    }
-
+function create(options: Options) {
     function middleware(req: any, res: ServerResponse, next: any): ServerMiddleware|void {
         const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
         let block = false;
@@ -41,4 +35,7 @@ function create(_options: any = []) {
     return middleware;
 }
 
-export default create({})
+export default create({
+    whitelist: [],
+    log: undefined
+})
